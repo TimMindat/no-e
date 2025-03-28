@@ -102,14 +102,14 @@ interface EnvelopeProps {
 
 export const Envelope = ({ children }: EnvelopeProps) => {
   const { isDarkMode } = useTheme();
-  // Remove the duplicate EnvelopeContainer declaration inside the component
   
   const [isOpen, setIsOpen] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [confetti, setConfetti] = useState<Array<{ id: number; x: number; y: number; color: string; size: number }>>([]);
   
   const { scrollY } = useScroll();
-  const openProgress = useTransform(scrollY, [0, 200], [0, 1]);
+  // Increase the scroll range from [0, 200] to [0, 500] for smoother animation
+  const openProgress = useTransform(scrollY, [0, 500], [0, 1]);
   const frontRotation = useTransform(openProgress, [0, 1], [0, -110]);
   const flapRotation = useTransform(openProgress, [0, 0.6], [0, -180]);
   const sealScale = useTransform(openProgress, [0, 0.3], [1, 0]);
