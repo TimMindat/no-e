@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Box, IconButton, Container, useMediaQuery } from '@mui/material';
+import { IconButton, Container, useMediaQuery } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';

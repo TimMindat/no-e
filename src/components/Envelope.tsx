@@ -1,10 +1,10 @@
 import { useState, useEffect, ReactNode } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Box, Typography, useTheme as useMuiTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useTheme } from '../contexts/ThemeContext';
 
-const EnvelopeContainer = styled(Box)(({ theme }) => ({
+const EnvelopeContainer = styled(Box)(() => ({
   position: 'relative',
   width: '100%',
   maxWidth: '650px',
@@ -102,7 +102,8 @@ interface EnvelopeProps {
 
 export const Envelope = ({ children }: EnvelopeProps) => {
   const { isDarkMode } = useTheme();
-  const theme = useMuiTheme();
+  // Remove the duplicate EnvelopeContainer declaration inside the component
+  
   const [isOpen, setIsOpen] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [confetti, setConfetti] = useState<Array<{ id: number; x: number; y: number; color: string; size: number }>>([]);
