@@ -109,7 +109,7 @@ export const Envelope = ({ children }: EnvelopeProps) => {
   
   const { scrollY } = useScroll();
   // Increase the scroll range from [0, 200] to [0, 500] for smoother animation
-  const openProgress = useTransform(scrollY, [0, 500], [0, 1]);
+  const openProgress = useTransform(scrollY, [0, 50], [0, 1]);
   const frontRotation = useTransform(openProgress, [0, 1], [0, -110]);
   const flapRotation = useTransform(openProgress, [0, 0.6], [0, -180]);
   const sealScale = useTransform(openProgress, [0, 0.3], [1, 0]);
